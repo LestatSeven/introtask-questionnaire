@@ -95,7 +95,7 @@
 				var files = elem.files;
 				return !!files.length ? files[0].size : 0;
 			}
-			// strange, but after redefine itself, function is not working at first time
+			// strange, but after redefine itself, function didn't working at first time
 			var files = elem.files;
 			return !!files.length ? files[0].size : 0;
 		} else {

@@ -16,7 +16,7 @@
 			"Напишите на JavaScript функцию, которая выводит список всех чисел, которые равны сумме факториалов своих цифр. Пример такого числа:",
 			"4! + 0! + 5! + 8! + 5! = 40585",
 			"В качестве ответа на вопрос пришлите ссылку на <a href=\"http://jsfiddle.net/\">http://jsfiddle.net/</a> с вашим кодом или на ваш репозиторий на <a href=\"https://github.com/\">https://github.com/</a>."
-			], "value": Local.get("q_task1")
+		], "value": Local.get("q_task1")
 	},
 	{"title": "Вопрос 14", "name": "q_task2",
 		"content": [
@@ -25,7 +25,7 @@
 			"Даны незавершенные интерфейсы корабля и планеты. Напишите недостающий код.",
 			"Полное условие задачи доступно на <a href=\"https://github.com/yandex-shri/introtask-space\">https://github.com/yandex-shri/introtask-space/</a>.",
 			"В качестве ответа на вопрос пришлите ссылку на <a href=\"http://jsfiddle.net/\">http://jsfiddle.net/</a> с вашим кодом или на ваш репозиторий на <a href=\"https://github.com/\">https://github.com/</a>."
-			], "value": Local.get("q_task2")
+		], "value": Local.get("q_task2")
 	},
 	{"title": "Вопрос 15", "name": "q_task3",
 		"content": [
@@ -37,7 +37,7 @@
 			"1. Выполните задание про форму-анкету, используя один из классических шаблонизаторов: Handlebars, mustache, Dust, Jade и т.п.",
 			"2. Выполните задание про форму-анкету, используя один из экзотических шаблонизаторов: XSLT, YATE, BEMHTML и т.п.",
 			"Разработку необходимо вести на <a href=\"https://github.com\">https://github.com</a>. В качестве ответа на вопрос пришлите ссылку на проект."
-		]
+		], "value": Local.get("q_task3")
 	}
 ],
 "about": [
