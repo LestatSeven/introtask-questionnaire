@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Компания Яндекс — Анкета второй Школы разработки интерфейсов в Москве</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=cyrillic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+		<!--[if IE 7]>
+		<link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css">
+		<![endif]-->
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="paper">
+				<h1><span>З</span>аполните анкету</h1>
+				<div class="timeline">
+				<!--<form action="sub.xml" method="post" enctype="multipart/form-data">-->
+				<form method="post" enctype="multipart/form-data">
+					{{#blocks}}
+					<div class="item">
+						<div class="trigger">
+							<span id="{{name}}" class="ic icon-minus-sign">
+								<i></i>
+							</span>
+						</div>
+						<div class="arrow"><i></i></div>
+						<div class="head_content">
+							<h3>{{title}}</h3>
+							<div class="collapse-out">
+								{{#content}}
+								<p>{{.}}</p>
+								{{/content}}
+								<textarea class="{{name}}" name="{{name}}">{{value}}</textarea>
+								<div class="err"></div>
+							</div>
+						</div>
+					</div>
+					{{/blocks}}
+
+					<div class="tab">
+						{{#about}}
+						<div class="row">
+							<div class="cell">{{title}}</div>
+							<div class="cell">
+								{{#file}}
+									<div class="filefrm">
+										<div class="lbl"></div>
+										<a class="btns btn">Обзор</a>
+										<input type="file" class="inp" name="{{name}}"/>
+									</div>
+								{{/file}}
+								{{#input}}<input type="text" name="{{name}}">{{/input}}
+								{{#textarea}}<textarea name="{{name}}"></textarea>{{/textarea}}
+								{{#select}}
+									<select name="{{name}}">
+										<option value="Выбрать">Выбрать</option>
+										<option value="От HR-менеджера Яндекса">От HR-менеджера Яндекса</option>
+										<option value="Я.Субботник">Я.Субботник</option>
+										<option value="Yet another conference">Yet another conference</option>
+										<option value="На другой конференции">На другой конференции</option>
+										<option value="Из поиска">Из поиска</option>
+										<option value="По рекомендации">По рекомендации</option>
+										<option value="Другое">Другое</option>
+									</select>
+								{{/select}}
+								<div class="err"></div>
+							</div>
+						</div>
+						{{/about}}
+						<div class="row">
+							<div class="cell"></div>
+							<div class="cell">
+								<a class="btns sbmtbtn_fake">Отправить</a>
+								<input class="hidden sbmtbtn" type="submit" value="Отправить">
+							</div>
+						</div>
+					</div>
+				</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="progress">
+			<div id="bar" class="bar">
+				<span class="marker"></span>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/hacks.js"></script>
+		<script type="text/javascript" src="js/mustache.js"></script>
+		<script type="text/javascript" src="js/mod/validator.js"></script>
+		<script type="text/javascript" src="js/mod/localstorage.js"></script>
+		<script type="text/javascript" src="js/mod/events.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+	</body>
+</html>
