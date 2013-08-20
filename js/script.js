@@ -95,7 +95,7 @@
 				var files = elem.files;
 				return !!files.length ? files[0].size : 0;
 			}
-			// strange, but after redefine itself, function didn't working at first time
+			// strange, but after redefine itself, function doesn't work at first time
 			var files = elem.files;
 			return !!files.length ? files[0].size : 0;
 		} else {
@@ -201,7 +201,7 @@
 					var t = textarea,
 						err = t.parentNode.querySelector('.err');
 					return function() {
-						new Validator().setOptions({
+						new Validator().set({
 							value: t.value,
 							message: 'Пожалуйста, заполните поле'
 						}).validate('isEmpty').callback(function(self) {
@@ -241,7 +241,7 @@
 		}).add(inp, 'change', function() {
 			var fileSize = getFileSize(this),
 				err = this.parentNode.parentNode.querySelector('.err');
-			new Validator().setOptions({
+			new Validator().set({
 				value: this.value,
 				message: 'Пожалуйста, выберите файл'
 			}).validate('isEmpty').callback(function(self) {
@@ -252,7 +252,7 @@
 					err.innerHTML = '';
 					setErrClass(flfrms, false);
 				}
-			}).setOptions({
+			}).set({
 				value: fileSize / 1024,
 				max: 250,
 				message: 'Файл слишком большого размера'
@@ -264,7 +264,7 @@
 					err.innerHTML = '';
 					setErrClass(flfrms, false);
 				}
-			}).setOptions({
+			}).set({
 				value: this.value,
 				message: 'Запрещенный формат файла'
 			}).validate(/\.(zip|rar|tar|gz|7z|gif|jpg|jpeg|png|eml|exe|m4a|ogg|mp3|wav|wma|flv|mov|wmv|mp4|avi|xls|doc|ocx|txt|pdf|ppt)$/i).callback(function(self) {
@@ -285,7 +285,7 @@
 
 		Events.add(vFio, 'change', function() {
 			var err = this.parentNode.parentNode.querySelector('.err');
-			new Validator().setOptions({
+			new Validator().set({
 				value: this.value,
 				message: 'Пожалуйста, укажите свои Имя и Фамилию'
 			}).validate('isEmpty').callback(function(self) {
@@ -306,7 +306,7 @@
 
 		Events.add(vMail, 'change', function() {
 			var err = this.parentNode.parentNode.querySelector('.err');
-			new Validator().setOptions({
+			new Validator().set({
 				value: this.value,
 				message: 'Пожалуйста, укажите свой e-mail'
 			}).validate('isEmail').callback(function(self) {
@@ -328,7 +328,7 @@
 			var val = this.options[this.options.selectedIndex].value,
 				notValid = this.options[0].value,
 				err = this.parentNode.parentNode.querySelector('.err');
-			new Validator().setOptions({
+			new Validator().set({
 				value: val,
 				equal: notValid,
 				message: 'Пожалуйста, укажите, откуда вы узнали о предложении'

@@ -9,7 +9,7 @@ Validator = function() {
 	this.result = false;
 	this.multi = false;
 	
-	this.setOptions = function(options) {
+	this.set = function(options) {
 		if(!this.multi) {
 			var opt = options;
 			this.value = undefined !== options.value ? options.value : this.value;
@@ -39,7 +39,6 @@ Validator = function() {
 				this.result = ('' !== val);
 				if(!this.result) this.multi = true;
 				return this;
-				break;
 			case 'isNumber':
 				regExp = /^-?(?:\d+|\d{1,3}(?:,\d{3})+)?(?:\.\d+)?$/;
 				break;
@@ -59,29 +58,18 @@ Validator = function() {
 				this.result = ('' !== val) && (val >= this.min) && (val <= this.max);
 				if(!this.result) this.multi = true;
 				return this;
-				break;
 			case 'isEqual':
 				this.result = ('' !== val) && (val == this.equal);
 				if(!this.result) this.multi = true;
 				return this;
-				break;
 			default:
 				this.result = false;
 				return this;
-				break;
 		}
 
 		this.result = regExp.test(val);
 		if(!this.result) this.multi = true;
 		return this;
-	}
-
-	this.retResult = function() {
-		if(!this.result) {
-			this.returnTo.innerHTML = this.message;
-		} else {
-			this.returnTo.innerHTML = '';
-		}
 	}
 
 	this.callback = function(callback) {
